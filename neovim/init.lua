@@ -31,7 +31,9 @@ require("lazy").setup({
     {
       'nvim-telescope/telescope.nvim', tag = '0.1.8',
       dependencies = { 'nvim-lua/plenary.nvim' }
-    }
+    },
+    { "vimwiki/vimwiki" },
+    { "mhinz/vim-startify" }
     -- add your plugins here
   },
   -- Configure any other settings here. See the documentation for more details.
@@ -47,3 +49,11 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 
 require("catppuccin").setup()
 vim.cmd.colorscheme "catppuccin"
+
+--vim.cmd [[
+--  call plug#begin()
+--
+--  Plug('vimwiki/vimwiki')
+--
+--  call plug#end()
+--]]
