@@ -23,20 +23,16 @@ function! LastModified()
 endfun
 
 function! NewTemplate()
-    echom "NewTemplate called"
-
     let l:wiki_directory = v:false
 
     for wiki in g:vimwiki_list
         if expand('%:p:h') =~ expand(wiki.path)
             let l:wiki_directory = v:true
-            echom "TESTET"
             break
         endif
     endfor
 
     if !l:wiki_directory
-        echom "TTT3"
         return
     endif
 
@@ -71,6 +67,11 @@ endfunction
 
 autocmd BufRead,BufNewFile *.md call NewTemplate()
 autocmd BufWritePre *.md call LastModified()
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_diff_base = 'HEAD'
 ]]
 
 vim.g.mapleader = " "
@@ -103,7 +104,8 @@ require("lazy").setup({
       dependencies = { 'nvim-lua/plenary.nvim' }
     },
     { "vimwiki/vimwiki" },
-    { "mhinz/vim-startify" }
+    { "mhinz/vim-startify" },
+    { "airblade/vim-gitgutter" }
     -- add your plugins here
   },
   -- Configure any other settings here. See the documentation for more details.
