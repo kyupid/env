@@ -86,3 +86,7 @@ alias c='clear'
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
+# private zshrc
+if [ -f ~/.zshrc_private ]; then
+    source ~/.zshrc_private
+fi
