@@ -10,7 +10,7 @@ return {
       -- 설정
       vim.g.startify_bookmarks = {
         "~/git/env/neovim/.config/nvim/lua/plugins",
-        "~/git/kyupid.github.io/_wiki/index.md"
+        "~/git/kyupid.github.io/_wiki/root-index.md"
       }
     end,
   }
