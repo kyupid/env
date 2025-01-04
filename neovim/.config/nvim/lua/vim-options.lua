@@ -1,9 +1,10 @@
-vim.cmd("set number")
+vim.cmd("set relativenumber")
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
+-- vim.cmd("nnoremap <leader>h :echo 'Leader H pressed'<CR>") -- 이걸 안넣으면, <leader>h 에서 다음 키 매핑을 기다리지 않고 종료됨. 이유는 모르겠음.
 
 vim.cmd[[
 let wiki = {}
@@ -70,10 +71,5 @@ endfunction
 autocmd BufRead,BufNewFile *.md call NewTemplate()
 autocmd BufWritePre *.md call LastModified()
 
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_diff_base = 'HEAD'
-let g:gitgutter_highlight_lines = 1
 ]]
 
