@@ -90,3 +90,5 @@ eval "$(zoxide init --cmd cd zsh)"
 if [ -f ~/.zshrc_private ]; then
     source ~/.zshrc_private
 fi
+
+alias cdd='cd $(find . -type d -print | fzf)'
