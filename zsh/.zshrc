@@ -92,3 +92,4 @@ if [ -f ~/.zshrc_private ]; then
 fi
 
 alias cdd='cd $(find . -type d -print | fzf)'
+alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
