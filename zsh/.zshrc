@@ -93,3 +93,15 @@ fi
 
 alias cdd='cd $(find . -type d -print | fzf)'
 alias gitlog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+# java
+export JAVA_HOME=$(/usr/libexec/java_home -v 17)
+export PATH=$JAVA_HOME/bin:$PATH
+
+# fzf cd
+fzf_cd() {
+  local file
+  file=$(fzf) || return
+  cd "$(dirname "$file")" || return
+}
+alias cdf="fzf_cd"
